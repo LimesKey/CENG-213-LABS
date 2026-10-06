@@ -48,7 +48,6 @@ architecture Behavioral of full_adder_tb is
 
 begin
     -- Instantiate the UUT
-    -- Port map makes the wire connections bewteen the input signals and the UUT
     uut: full_adder port map (
         A => A,
         B => B,
@@ -56,7 +55,6 @@ begin
         Carry_out => Carry_out,
         Cin => Cin );
     
-    -- This provides all the different input combinations as stimuli   
     stim_proc: process
     begin
         A <= '0';

@@ -1,0 +1,5 @@
+[libraries]
+lab1.files = ["LAB_1/CENG213-LAB1.srcs/**/*.vhd"]
+lab2.files = ["LAB_2/half-adder.srcs/**/*.vhd"]
+lab3.files = ["LAB_3/LAB_3.srcs/**/*.vhd"]
+lab4.files = ["LAB_4/LAB_4.srcs/**/*.vhd"]
