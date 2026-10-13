@@ -30,58 +30,57 @@ use IEEE.STD_LOGIC_1164.all;
 --use UNISIM.VComponents.all;
 
 entity LAB_4_COUNTER is
-    --  Port ( );
 end LAB_4_COUNTER;
 
 architecture Behavioral of LAB_4_COUNTER is
 
     component counter
         port (
-            Reset, CLK, Enable, Up_Down : in std_logic;
+            reset, clk, enable, up_down : in std_logic;
             Q                           : out std_logic_vector(3 downto 0));
     end component;
 
-    signal Reset, CLK, Enable, Up_Down : std_logic;
+    signal reset, clk, enable, up_down : std_logic;
     signal Q : std_logic_vector(3 downto 0);
 begin
 
     uut : counter
     port map(
-        Reset   => Reset,
-        CLK     => CLK,
-        Enable  => Enable,
-        Up_Down => Up_Down,
+        reset   => reset,
+        clk     => clk,
+        enable  => enable,
+        up_down => up_down,
         Q       => Q
     );
 
-    clk_proc : process
+    ClockProcess : process
     begin
-        CLK <= '0';
+        clk <= '0';
         wait for 50 ns;
-        CLK <= '1';
+        clk <= '1';
         wait for 50 ns;
     end process;
 
     stim_proc : process
     begin
-        Reset <= '0';
-        Enable <= '1';
-        Up_Down <= '0';
+        reset <= '0';
+        enable <= '1';
+        up_down <= '0';
 
         wait for 200 ns;
-        Up_Down <= '1';
+        up_down <= '1';
 
         wait for 100 ns;
-        Reset <= '1';
+        reset <= '1';
 
         wait for 1400 ns;
-        Enable <= '0';
+        enable <= '0';
 
         wait for 200 ns;
-        Up_Down <= '0';
+        up_down <= '0';
 
         wait for 400 ns;
-        Enable <= '1';
+        enable <= '1';
         wait;
     end process;
 end Behavioral;

@@ -39,7 +39,6 @@ end d_latch_d_flipflop;
 architecture data_flow of d_latch_d_flipflop is
     signal QA_i, QABar_i : std_logic;
 begin
-
     process (CLK) begin
         if rising_edge(CLK) then
             QB <= D;
