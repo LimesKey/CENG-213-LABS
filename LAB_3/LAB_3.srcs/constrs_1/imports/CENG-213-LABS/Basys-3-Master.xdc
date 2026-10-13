@@ -7,10 +7,8 @@
 #set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports clk]
 #create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
 
-## CLK comes from a push button (BTNC, below), which isn't a clock-capable pin
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets { CLK }]
 
-## The NAND latch is a deliberate combinational feedback loop
 set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {QA_OBUF QABar_OBUF}]
 
 ## Switches
